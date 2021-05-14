@@ -1,0 +1,21 @@
+{% extends 'mobile/base.html' %}
+{% load static %}
+{% block body_block %}
+<h1 align="center">Popular Brands</h1><br>
+        <div class="container">
+            <div class="row">
+                {% for brand in brands%}
+                <div class="col-12 col-md-2 col-lg-3 col-xl-3 col-xxl-3 my-3 ">
+                    <div class="card"  style="width: 15rem;">
+                        <div class="card-body">
+                            <h2 class="mx-auto text-white">{{ brand.brand_name }}</h2>
+                            <h5 class="card-title" align="center" style="font-weight:600;">{{ brand.brand_name }}</h5>
+                        </div>
+                        <a href="{%url 'listProducts' brand.id %}"class="btn" style="background-color:#e7ab3c;outline:none;color:white;">View Products</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+{% endblock %}

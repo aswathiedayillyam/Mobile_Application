@@ -1,0 +1,44 @@
+{% extends 'mobile/base.html' %}
+
+{% block body_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+{% if orders %}
+ <table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+        <th scope="col">ID</th>
+      <th scope="col">Product</th>
+        <th scope="col">Address</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Order Status</th>
+        <th scope="col">Actions</th>
+          </tr>
+  </thead>
+  <tbody>
+
+  {% for order in orders %}
+    <tr>
+        <td>{{ order.id }}</td>
+      <td>{{ order.product }}</td>
+        <td>{{ order.address }}</td>
+        <td>{{ order.user }}</td>
+        <td>{{ order.status}}</td>
+        <td>
+
+    <form action="" method="post">{%csrf_token%}<button type="submit" class="btn btn-dark"><a href="{%url 'order-approve' order.id%}">Approve</a></button></form>
+
+        </td>
+
+    </tr>
+  {% endfor %}
+      </tbody>
+</table></div>
+{%else%}
+                <h3>No new orders</h3>
+{% endif %}
+            </div>
+        </div>
+</section>
+{% endblock %}

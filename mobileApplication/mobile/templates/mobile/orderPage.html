@@ -1,0 +1,36 @@
+{% extends 'mobile/base.html' %}
+
+{% block body_block %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="login-form">
+                <h2>Place-Order</h2>
+                <br>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="group-input">
+                        <label for="">Product</label>
+                        {{ form.product }}
+                    </div>
+                    <br>
+                    <div class="group-input">
+                        <label for="">User name</label>
+                        <input type="text" name="user" value="{{ request.user }}">
+                    </div>
+                    <br>
+                    <div class="group-input">
+                        <label for="">Address</label>
+                        {{ form.address }}
+                    </div>
+                    <br>
+                    <button type="submit" class="site-btn login-btn">BUY NOW</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

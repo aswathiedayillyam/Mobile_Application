@@ -1,0 +1,27 @@
+{% extends 'mobile/base.html' %}
+{% block body_block %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="login-form">
+                        <h1 align="">Login</h1><br>
+                        <form action="" method="post">{% csrf_token%}
+                            <div class="group-input">
+                                <label for="username">Username *</label>
+                                <input type="text" id="username" name="username">
+                            </div>
+                            <br>
+                            <div class="group-input">
+                                <label for="pass">Password *</label>
+                                <input type="password" id="pass" name="pass">
+                            </div><br>
+                            <button type="submit" class="site-btn login-btn">Login</button>
+                        </form><br>
+                        <div class="switch-login">
+                            <a href="{%url 'register'%}" class="or-login">Create An Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

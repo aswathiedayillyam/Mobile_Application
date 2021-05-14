@@ -1,0 +1,23 @@
+#mobile/brands
+    #get=>list all brands
+    #post=>create a new brand
+#mobile/brands/edit/1
+    #get=>fetch that corresponding brand
+    #post=>Update that brand
+
+
+#mobile/brands/delete/1
+    #post=>delete brand with id
+
+
+#----------mobiles-----------
+#mobile/products
+    #get=>list all mobiles
+    #post=>create new mobile
+
+
+#----------------------------
+#user authentication
+#mobile/userRegistration
+#login
+#logout
